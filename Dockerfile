@@ -27,7 +27,6 @@ WORKDIR /var/www/${PROJECT}
 
 COPY .env.example .env
 
-RUN php artisan key:generate
 
 COPY . .
 
@@ -36,6 +35,9 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 # RUN mv composer.phar /usr/local/bin/composer
 # RUN chmod +x /usr/local/bin/composer
 RUN composer install --ignore-platform-reqs
+
+RUN php artisan key:generate
+
 
 # EXPOSE 8080
 
