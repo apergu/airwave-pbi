@@ -25,6 +25,10 @@ RUN  pecl install amqp \
 RUN mkdir -p /var/www/${PROJECT}
 WORKDIR /var/www/${PROJECT}
 
+COPY .env.example .env
+
+RUN php artisan key:generate
+
 COPY . .
 
 # Install Composer dependencies
