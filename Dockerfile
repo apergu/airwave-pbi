@@ -31,7 +31,7 @@ COPY . .
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 # RUN mv composer.phar /usr/local/bin/composer
 # RUN chmod +x /usr/local/bin/composer
-RUN composer install
+RUN composer install --ignore-platform-reqs
 
 # EXPOSE 8080
 
