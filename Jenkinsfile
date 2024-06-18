@@ -37,7 +37,10 @@ pipeline {
             FAILED_STAGE=env.STAGE_NAME
             echo "BUILD"
 
-            dockerImage = docker.build("apergudev/airwave-pbi:latest")
+             sh label: 'Build Script', script:
+            """
+                docker build -t apergudev/airwave-pbi:latest .
+            """
         }
       }
     }
