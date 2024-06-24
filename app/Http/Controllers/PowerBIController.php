@@ -19,7 +19,7 @@ class PowerBIController extends Controller
 
     public function fetchData(Request $request)
     {
-        $data = $this->oauthService->get(1333, 1, $request->id, $request->name); // Replace with your API endpoint
+        $data = $this->oauthService->get(1360, 1, $request->id, $request->name); // Replace with your API endpoint
 
         $fetchData = env('BASE_URI_AIRWAVE') . $data['file']['url'];
 

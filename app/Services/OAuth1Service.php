@@ -25,9 +25,9 @@ class OAuth1Service
         ]);
 
         $stack->push($oauth);
-
+        // dd(env('BASE_URI_AIRWAVE'));
         $this->client = new Client([
-            'base_uri' => 'https://8548478-sb1.restlets.api.netsuite.com/app/site/hosting/restlet.nl',
+            'base_uri' => env('BASE_URI_AIRWAVE') . '/app/site/hosting/restlet.nl',
             'handler' => $stack,
             'auth' => 'oauth',
         ]);
